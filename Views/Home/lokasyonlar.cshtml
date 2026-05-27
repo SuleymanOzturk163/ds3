@@ -1,0 +1,207 @@
+@model IEnumerable<ds3.Models.Location>
+
+@{
+    ViewData["Title"] = "Lokasyonlar";
+}
+
+@section SayfaStyle {
+    <link rel="stylesheet" href="~/lokasyonlar.css" />
+}
+
+<div class="Sayfa-Content">
+    <div class="resim-content">
+        <img src="~/images/lok.jpg" alt="Lokasyonlar Banner" />
+    </div>
+    <div class="Yazi">
+        <h1>
+            <span>L</span><span>O</span><span>K</span><span>A</span><span>S</span><span>Y</span><span>O</span><span>N</span><span>L</span><span>A</span><span>R</span>
+        </h1>
+        <p>
+            Aradığın Her Şey Tek Bir Sekmede <br />
+            Sağ üstteki arama butonunu kullanarak aradığın lokasyonu
+            bulabilirsin, şimdi butona tıkla!
+        </p>
+        <button onclick="location.href='#hedef'">HAYDİ BAŞLAYALIM</button>
+    </div>
+</div>
+
+<div class="OrtaContent">
+    <div class="yazi1">
+        <i class="fas fa-hand-sparkles"></i>
+        <span>PvP Mekanları</span>
+    </div>
+
+    <div class="yazi1">
+        <i class="fas fa-landmark"></i>
+        <span>En Görkemli Mekanlar</span>
+    </div>
+
+    <div class="yazi1">
+        <i class="fas fa-skull-crossbones"></i>
+        <span>En Ölümcül Mekanlar</span>
+    </div>
+
+    <div class="yazi1">
+        <i class="fas fa-fire-alt"></i>
+        <span>En Safe Mekanlar</span>
+    </div>
+</div>
+
+<div class="Resim-Kartlari" id="hedef">
+
+
+    <div class="kart" data-title="Ateşin Bağişlandiği Tapinak" data-category="Safe">
+        <img src="/images/FirelinkShrineLokasyonlar.png" alt="Firelink Shrine" />
+        <h2>Ateşin Bağışlandığı Tapınak</h2>
+        <div class="panel-content">
+            <h3>Tapınak Hakkında Bilgiler <span class="badge bg-success">En Safe</span></h3>
+            <p>
+                Dark Souls serisinin merkez hub'ıdır. Burası, oyuncunun seviye
+                atlayebildiği, eşya satın alabildiği ve hikayede ilerlerken
+                karşılaştığı NPC'lerin toplandığı güvenli bir alandır. İlk Sönmüş,
+                burada Fire Keeper ile tanışır.
+            </p>
+            <button class="kapat-btn">Paneli Kapat</button>
+        </div>
+    </div>
+
+    <div class="kart" data-title="Lothric Yüksek Duvari" data-category="Görkemli">
+        <img src="/images/LothricHighWallLokasyonlar.webp" alt="High Wall of Lothric" />
+        <h2>Lothric Yüksek Duvarı</h2>
+        <div class="panel-content">
+            <h3>Duvar Hakkında Bilgiler <span class="badge bg-info">Görkemli</span></h3>
+            <p>
+                Oyunun başlangıç lokasyonudur ve Lothric Kalesine giden ilk
+                kapıdır. Zorlu şövalyeler ve ilk önemli boss (Vordt of the Boreal
+                Valley) bu bölgede bulunur. Düşmanları dikkatlice incelemek,
+                hayatta kalmak için kritik öneme sahiptir.
+            </p>
+            <button class="kapat-btn">Paneli Kapat</button>
+        </div>
+    </div>
+
+    <div class="kart" data-title="Ölümsüz Yerleşimi" data-category="Ölümcül">
+        <img src="/images/UndeadStealementLokasyonlar.jpg" alt="Undead Settlement" />
+        <h2>Ölümsüz Yerleşimi</h2>
+        <div class="panel-content">
+            <h3>Yerleşim Hakkında Bilgiler <span class="badge bg-warning">Ölümcül</span></h3>
+            <p>
+                Korkunç düşmanlarla ve tuzaklarla dolu geniş bir köydür. Buradaki
+                köylüler ve devler, yeni oyuncular için ciddi bir engel teşkil
+                edebilir. Bölgenin sonunda Curse-Rotted Greatwood bossu
+                beklemektedir.
+            </p>
+            <button class="kapat-btn">Paneli Kapat</button>
+        </div>
+    </div>
+
+    <div class="kart" data-title="Boreal Vadisi Irithyll" data-category="PvP">
+        <img src="/images/BorealVadiLokasyonlar.webp" alt="Irithyll" />
+        <h2>Boreal Vadisi Irithyll</h2>
+        <div class="panel-content">
+            <h3>Irithyll Hakkında Bilgiler <span class="badge bg-danger">PvP Mekanı</span></h3>
+            <p>
+                Aniden soğuk ve ay ışığıyla aydınlanmış büyülü bir şehir. Pontiff
+                Sulyvahn tarafından yönetilir. Şehrin mimarisi, Anor Londo'nun
+                ihtişamını hatırlatır ancak buzlu sis ve karanlık büyülerle
+                kaplıdır. Bu bölge, aynı zamanda ünlü Darkmoon Greatsword'un
+                kökenlerine de işaret eder.
+            </p>
+            <button class="kapat-btn">Paneli Kapat</button>
+        </div>
+    </div>
+
+    <div class="kart" data-title="Cathedral of the Deep" data-category="Ölümcül">
+        <img src="/images/cathedrallokasyonlar.jpg" alt="Cathedral of the Deep" />
+        <h2>Cathedral of the Deep</h2>
+        <div class="panel-content">
+            <h3>Katedral Hakkında Bilgiler <span class="badge bg-warning">Ölümcül</span></h3>
+            <p>
+                Deacon of the Deep ve Saint Aldrich'in bulunduğu devasa, gotik bir
+                katedral. Çevresi devasa mezarlıklar ve bataklıklarla çevrilidir.
+                İçerideki labirent benzeri yapılar ve Patches gibi NPC'ler
+                tarafından kurulan tuzaklar, burayı zorlu bir keşif alanı yapar.
+            </p>
+            <button class="kapat-btn">Paneli Kapat</button>
+        </div>
+    </div>
+
+    <div class="kart" data-title="Farron Keep" data-category="Ölümcül">
+        <img src="/images/farronkeeplokasyonlar.webp" alt="Farron Keep" />
+        <h2>Farron Keep</h2>
+        <div class="panel-content">
+            <h3>Koru Hakkında Bilgiler <span class="badge bg-warning">Ölümcül</span></h3>
+            <p>
+                Yavaşlatan ve zehirleyen bir bataklık bölgesi. Oyuncunun
+                ilerlemesi için üç meşalenin söndürülmesi gerekir. Burası aynı
+                zamanda Abysswatchers (Farron'un Gözcüleri) boss dövüşünün
+                yapıldığı alandır ve Artorias'ın ruhunu taşıyan birliğin son
+                kalesidir.
+            </p>
+            <button class="kapat-btn">Paneli Kapat</button>
+        </div>
+    </div>
+
+    <div class="kart" data-title="Anor Londo" data-category="Görkemli">
+        <img src="/images/anorlondolokasyonlar.webp" alt="Anor Londo" />
+        <h2>Anor Londo</h2>
+        <div class="panel-content">
+            <h3>Güneş Şehri Hakkında Bilgiler <span class="badge bg-info">Görkemli</span></h3>
+            <p>
+                Serinin ilk oyunundan tanıdık, Tanrıların Kralı Gwyn'in terk
+                edilmiş şehri. Irithyll'in hemen ilerisinde bulunur ve Dark Souls
+                III'te yoğun bir şekilde kış manzarası altındadır. Burada,
+                Aldrich, Devourer of Gods bossu ile yüzleşilir.
+            </p>
+            <button class="kapat-btn">Paneli Kapat</button>
+        </div>
+    </div>
+
+    <div class="kart" data-title="Lothric Castle" data-category="Görkemli">
+        <img src="/images/lothriccastlelokasyonlar.webp" alt="Lothric Castle" />
+        <h2>Lothric Castle</h2>
+        <div class="panel-content">
+            <h3>Kale Hakkında Bilgiler <span class="badge bg-info">Görkemli</span></h3>
+            <p>
+                Oyunun ana kalelerinden biridir ve Lord of Cinder'ın
+                ikametgahıdır. Geniş ve karmaşık bir yapıya sahiptir; kanatlı
+                şövalyeler ve Ejderhalarla karşılaşılır. Burası, Grand Archives'e
+                ve son boss'lardan biri olan Twin Princes (İkiz Prensler) ile
+                dövüşe giden yoldur.
+            </p>
+            <button class="kapat-btn">Paneli Kapat</button>
+        </div>
+    </div>
+
+
+    @if (Model != null && Model.Any())
+    {
+        @foreach (var location in Model)
+        {
+            <div class="kart" data-title="@location.Title" data-category="@location.Category">
+
+                
+                <img src="@(location.ImageUrl.StartsWith("/") || location.ImageUrl.StartsWith("http") ? location.ImageUrl : "/images/" + location.ImageUrl)"
+                    alt="@location.Title" />
+
+                <h2>@location.Title</h2>
+
+                <div class="panel-content">
+                    <h3>@location.InfoSubtitle Hakkında Bilgiler
+                        
+                        @if (location.Category)
+                        {
+                            <span class="badge bg-secondary">Özel Mekan</span>
+                        }
+                    </h3>
+                    <p>@location.Description</p>
+                    <button class="kapat-btn">Paneli Kapat</button>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+@section Scripts {
+    <script src="~/js/lokasyonlar.js"></script>
+}

@@ -1,0 +1,260 @@
+@using System.Security.Claims
+@model ds3.Models.AuthViewModel
+
+
+
+@{
+
+    Layout = null;
+
+}
+
+
+
+<!DOCTYPE html>
+
+<html lang="tr">
+
+
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" href="~/images/logo2.png">
+
+    <link rel="stylesheet" href="~/stylelogin.css" />
+
+    <link rel="stylesheet" href="~/loading.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+    <title>Dark Souls 3 Wiki - Login</title>
+
+</head>
+
+
+
+<body>
+
+
+
+    <div id="dsLoader">
+
+        <div class="loader-wrapper">
+
+            <img src="~/images/logo2.png" class="ds-logo" alt="Logo" />
+
+            <div class="loading-bar-container">
+
+                <div class="loading-bar"></div>
+
+                <span class="loading-text">LOADING...</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="Baslik">
+
+        <div class="menu">
+
+            <a href="/"><img src="~/images/logo2.png" alt="Logo" /></a>
+
+            <ul>
+
+                <li><a href="/Home/Index">Ana Sayfa</a></li>
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li><a href="/Admin/Index" style="color: #ff4500;">Admin Paneli</a></li>
+                    }
+
+                    <li><a href="/Home/Logout" style="color: #ccc;">Çıkış Yap (@User.Identity.Name)</a></li>
+                }
+
+                <li><a href="/Home/Buildler">Buildler</a></li>
+
+                <li><a href="/Home/Lokasyonlar">Lokasyonlar</a></li>
+
+                <li><a href="/Home/BossRehberi">Boss Rehberi</a></li>
+
+                <li><a href="/Home/YeniBaslayanlar">Yeni Başlayanlar</a></li>
+
+                <li><a href="/Home/Hakkimda">Hakkımda</a></li>
+
+                <li><a href="/Home/Iletisim">İletişim</a></li>
+
+            </ul>
+
+            <ul>
+
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+
+                <button><a href="https://store.steampowered.com/app/374320/DARK_SOULS_III/" target="_blank"><i
+                    class="fa-brands fa-steam"></i></a></button>
+
+                    <button><a class="tekraracma" href="/Home/Login"><i class="fa-solid fa-circle-user"></i></a></button>
+
+                    <button><a href="/Home/Alisveris"><i class="fa-solid fa-cart-shopping"></i></a></button>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="container">
+
+            <div class="Giris">
+
+                <span class="iconkapama">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </span>
+
+
+
+                <div class="formkutu login">
+
+                    <h2>Giriş Yap</h2>
+
+                    <form asp-controller="Home" asp-action="login" method="post">
+
+                        @Html.AntiForgeryToken()
+
+                        <div class="giriskutu">
+
+                            <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+
+                            <input asp-for="LoginEmail" type="email"  />
+
+                            <label>Gmail</label>
+
+                        </div>
+
+                        <div class="giriskutu">
+
+                            <span class="icon"><i class="fa-solid fa-lock"></i></span>
+
+                            <input asp-for="LoginPassword" type="password"  />
+
+                            <label>Şifre</label>
+
+                        </div>
+
+                        <button type="submit" class="buton">Giriş Yap</button>
+
+                        <div class="giris-kayit">
+
+                            <p>Hesabınız yok mu? <a href="#" class="kayit-link">Kayıt Ol</a></p>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+
+                <div class="formkutu register">
+
+                    <h2>Kayıt Ol</h2>
+
+                    <form asp-controller="Home" asp-action="Register" method="post">
+
+                        @Html.AntiForgeryToken()
+
+                        <div class="giriskutu">
+
+                            <span class="icon"><i class="fa-solid fa-user"></i></span>
+
+                            <input asp-for="RegisterUsername" type="text" required />
+
+                            <label>Kullanıcı Adı</label>
+
+                        </div>
+
+                        <div class="giriskutu">
+
+                            <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+
+                            <input asp-for="RegisterEmail" type="email" required />
+
+                            <label>Gmail</label>
+
+                        </div>
+
+                        <div class="giriskutu">
+
+                            <span class="icon"><i class="fa-solid fa-lock"></i></span>
+
+                            <input asp-for="RegisterPassword" type="password" required />
+
+                            <label>Şifre</label>
+
+                        </div>
+
+
+                        <button type="submit" class="buton">Kayıt Ol</button>
+
+                        <div class="giris-kayit">
+
+                            <p>Zaten bir hesabınız var mı? <a href="#" class="giris-link">Giriş Yap</a></p>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        @if (ViewBag.Hata != null)
+        {
+            <div class="alert-message">
+                @ViewBag.Hata
+            </div>
+
+            <script>
+                    setTimeout(function () {
+                        var msg = document.querySelector('.alert-message');
+                        if (msg) msg.style.display = 'none';
+                    }, 3000);
+            </script>
+        }
+
+
+
+        <footer
+            style="text-align: center; padding: 20px; color: rgba(255,255,255,0.5); font-size: 0.85rem; position: absolute; bottom: 0; width: 100%; z-index: 10;">
+
+            <p>&copy; @DateTime.Now.Year Süleyman Öztürk - DS3 Wiki. Tüm Hakları Saklıdır.</p>
+
+        </footer>
+
+
+
+        <script src="~/js/account.js"></script>
+
+        <script src="~/js/loader.js"></script>
+
+    </body>
+
+
+
+</html>

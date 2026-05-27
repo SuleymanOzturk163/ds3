@@ -1,0 +1,339 @@
+html {
+    scroll-behavior: auto; 
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    transition: 0.2 ease;
+    -webkit-transition: 0.2 ease;
+    -moz-transition: 0.2 ease;
+    -ms-transition: 0.2 ease;
+    -o-transition: 0.2 ease;
+}
+body{
+    background: url('images/ds3login.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('images/fog.png') repeat;
+  background-size: cover;
+  opacity: 0.1; 
+  animation: fogmove 25s linear infinite;
+  pointer-events: none;
+  mix-blend-mode: lighten; 
+}
+@keyframes fogmove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-40%); }
+}
+.Baslik .menu{
+    width: 85vw;
+    display: flex;
+    margin: 0 auto;
+    height: 80px;
+    align-items: center;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    margin-top: 30px;
+    justify-content: space-evenly;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    backdrop-filter: blur(5px);
+}
+.Baslik .menu img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+.Baslik .menu ul{
+    display: flex;
+    list-style-type: none;
+    margin: 40px;
+}
+.Baslik .menu ul li{
+    margin: 0 40px;
+}
+.Baslik .menu ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 200;
+    font-size: 14px;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+}
+.Baslik .menu ul li a::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+.Baslik .menu ul li a:hover::after{
+  width: 100%;
+}
+.Baslik .menu ul i{
+    font-size: 20px;
+    margin: 0 5px;
+    color: black;
+}
+.Baslik .menu ul button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.Giris{
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: height 0.2 ease;
+    -webkit-transition: height 0.2 ease;
+    -moz-transition: height 0.2 ease;
+    -ms-transition: height 0.2 ease;
+    -o-transition: height 0.2 ease;
+    overflow: hidden;
+}
+
+.Giris.active{
+    height: 520px;
+}
+.Giris .formkutu{
+    width: 100%;
+    padding: 40px;
+}
+.Giris .formkutu.login{
+    transition: transform 0.18s ease;
+    -webkit-transition: transform 0.18s ease;
+    -moz-transition: transform 0.18s ease;
+    -ms-transition: transform 0.18s ease;
+    -o-transition: transform 0.18s ease;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+}
+
+.Giris.active .formkutu.login{
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transform: translateX(-400px);
+    -webkit-transform: translateX(-400px);
+    -moz-transform: translateX(-400px);
+    -ms-transform: translateX(-400px);
+    -o-transform: translateX(-400px);
+}
+
+.Giris .formkutu.register{
+    position: absolute;
+    transform: translateX(400px);
+    -webkit-transform: translateX(400px);
+    -moz-transform: translateX(400px);
+    -ms-transform: translateX(400px);
+    -o-transform: translateX(400px);
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+}
+
+.Giris.active .formkutu.register{
+    transition: transform 0.18s ease;
+    -webkit-transition: transform 0.18s ease;
+    -moz-transition: transform 0.18s ease;
+    -ms-transition: transform 0.18s ease;
+    -o-transition: transform 0.18s ease;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+}
+
+
+
+.Giris .iconkapama{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #162938;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+
+}
+.formkutu h2{
+    font-size: 2em;
+    color: #162938;
+    text-align: center;
+}
+.giriskutu{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+.giriskutu label{
+    position: absolute;
+    top: 50%;
+    left: 32px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    font-size: 1em;
+    color: #162938;
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+.giriskutu input:focus ~ label,
+.giriskutu input:valid ~ label{
+    top: -5px;
+}
+.giriskutu input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #162938;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+.giriskutu .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #162938;
+    line-height: 57px;
+}
+.remember{
+    font-size: 0.9em;
+    color: #162938;
+    font-weight: 500;
+    margin: -15px 0 -15px;
+    display: flex;
+    justify-content: space-between;
+}
+.remember label input{
+    accent-color: #162938;
+    margin-right: 3px;
+
+}
+.remember a{
+    color: #162938;
+    text-decoration: none;
+
+}
+.remember a:hover{
+    text-decoration: underline;
+
+}
+.buton{
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #fff;
+    font-weight: 500;
+}
+.giris-kayit{
+    font-size: 0.9em;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+.giris-kayit p a{
+    color: #162938;
+    text-decoration: none;
+    font-weight: 600;
+}
+.giris-kayit p a:hover{
+    text-decoration: underline;
+}
+
+
+.alert-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff4500; 
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    z-index: 9999;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}

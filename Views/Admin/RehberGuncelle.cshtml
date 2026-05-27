@@ -1,0 +1,139 @@
+@model ds3.Models.RehberViewModel
+
+@{
+    ViewData["Title"] = "Rehber Güncelle";
+    Layout = "_AdminLayout";
+}
+
+<style>
+    .souls-container {
+        background: radial-gradient(circle at top, #1a1510 0%, #0a0a0a 100%);
+        color: #eee;
+        padding: 40px;
+        border-radius: 4px;
+        max-width: 650px;
+        margin: 50px auto;
+        border: 1px solid #3a2f1d;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(197, 160, 89, 0.05);
+        font-family: 'Cinzel', 'Georgia', serif;
+    }
+
+    .souls-title {
+        color: #c5a059;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: 1px solid #3a2f1d;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+        text-shadow: 0 0 10px rgba(197, 160, 89, 0.3);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .souls-form-group {
+        margin-bottom: 25px;
+        position: relative;
+    }
+
+    .souls-label {
+        display: block;
+        margin-bottom: 8px;
+        color: #a3937b;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .souls-input,
+    .souls-textarea {
+        width: 100%;
+        padding: 12px 15px;
+        background: #121212;
+        border: 1px solid #2a2216;
+        color: #fff;
+        font-size: 0.95rem;
+        border-radius: 2px;
+    }
+
+    .souls-error {
+        color: #ff4444;
+        font-size: 0.8rem;
+        font-weight: bold;
+        display: block;
+        margin-top: 6px;
+    }
+
+    .bonfire-btn {
+        background: linear-gradient(135deg, #a47a32 0%, #684a1a 100%);
+        color: #000;
+        padding: 15px 25px;
+        border: 1px solid #c5a059;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+        width: 100%;
+        margin-top: 15px;
+    }
+</style>
+
+<div class="souls-container">
+    <h2 class="souls-title"><span>🔥</span> Rehber Güncelle</h2>
+
+    <form asp-controller="Admin" asp-action="RehberGuncelle" asp-route-id="@Context.Request.Query["id"]" method="post"
+          enctype="multipart/form-data">
+
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="id" value="@Context.Request.Query["id"]" />
+
+        <div class="souls-form-group">
+            <label class="souls-label">Rehber Başlığı</label>
+            <input asp-for="Baslik" class="souls-input" />
+            <span asp-validation-for="Baslik" class="souls-error"></span>
+        </div>
+
+        <div class="souls-form-group">
+            <label class="souls-label">Kısa Özet</label>
+            <input asp-for="Ozet" class="souls-input" />
+            <span asp-validation-for="Ozet" class="souls-error"></span>
+        </div>
+
+        <div class="souls-form-group">
+            <label class="souls-label">Görseli Değiştir</label>
+            <input asp-for="ResimDosyasi" type="file" class="souls-input" accept="image/*" />
+        </div>
+
+        <div class="souls-form-group">
+            <label class="souls-label">Rehber Detay İçeriği</label>
+            <textarea asp-for="Icerik" rows="7" class="souls-textarea">@Model.Icerik</textarea>
+            <span asp-validation-for="Icerik" class="souls-error"></span>
+        </div>
+
+        <div class="souls-form-group">
+            <label class="souls-label">Yazar</label>
+            <input asp-for="Yazar" class="souls-input" />
+            <span asp-validation-for="Yazar" class="souls-error"></span>
+        </div>
+
+        <div class="souls-form-group">
+            <label class="souls-label">Detaylı Uzun İçerik</label>
+            <textarea asp-for="UzunIcerik" rows="8" class="souls-textarea">@Model.UzunIcerik</textarea>
+            <span asp-validation-for="UzunIcerik" class="souls-error"></span>
+        </div>
+
+        <div class="souls-form-group">
+            <label class="souls-label">Taktik Videosu Linki</label>
+            <input asp-for="VideoUrl" class="souls-input" />
+            <span asp-validation-for="VideoUrl" class="souls-error"></span>
+        </div>
+
+        <button type="submit" class="bonfire-btn">🔥 Güncellemeleri Mühürle</button>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

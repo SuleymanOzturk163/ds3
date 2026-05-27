@@ -1,0 +1,42 @@
+@model ds3.Models.rehber
+
+@{
+    ViewData["Title"] = Model.Baslik;
+    Layout = "_Layout";
+}
+
+@section SayfaStyle {
+    <link rel="stylesheet" href="~/Rehber.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+}
+
+<div class="slider-container">
+    <div class="slider-wrapper swiper-wrapper">
+
+        @* TEK VE YETKİLİ DÖNGÜ: ViewBag içindeki listeyi dönüyoruz *@
+        @if (ViewBag.TumRehberler != null)
+        {
+            @foreach (var r in (List<ds3.Models.rehber>)ViewBag.TumRehberler)
+            {
+                <div class="slider-item swiper-slide">
+                    <div class="slide-content">
+                        <h3 class="slide-subtitle">"@r.Baslik"</h3>
+                        <h2 class="slide-title">@r.Ozet</h2>
+                        <p class="slide-description">@Html.Raw(r.UzunIcerik)</p>
+                        <a href="@r.VideoUrl" target="_blank" class="slide-button"><span>Taktik Videosunu İzle</span></a>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+    <div class="slider-navigations">
+        <button id="slide-prev" class="material-symbols-rounded">arrow_left_alt</button>
+        <button id="slide-next" class="material-symbols-rounded">arrow_right_alt</button>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="~/js/rehber.js"></script>
+}

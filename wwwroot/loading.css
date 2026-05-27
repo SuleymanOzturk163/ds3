@@ -1,0 +1,99 @@
+#dsLoader {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #0b0b0b, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+#dsLoader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-wrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ds-logo {
+  width: 250px;
+  animation: rotateSlow 6s linear infinite, pulse 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 25px #d4af37);
+  margin-bottom: 40px;
+}
+
+@keyframes rotateSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.05) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.loading-bar-container {
+  width: 300px;
+  height: 20px;
+  border: 2px solid #a37a36;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px #a37a36;
+  background: #000;
+}
+
+.loading-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to right, #5c2c00, #d4af37, #fff2b0);
+  animation: loadAnim 3s linear infinite;
+}
+
+@keyframes loadAnim {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.loading-text {
+  display: block;
+  margin-top: 15px;
+  color: #c8aa6e;
+  font-size: 14px;
+  letter-spacing: 4px;
+  font-family: Georgia, serif;
+  text-shadow: 0 0 10px #a37a36;
+  animation: flicker 1.5s infinite;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,293 @@
+@{
+    ViewData["Title"] = "Kadim Lokasyonlar";
+    Layout = "_AdminLayout";
+}
+
+@model List<Location>
+
+<style>
+    
+    .ds-page-header h1 {
+        font-family: 'Cinzel', serif;
+        color: #c5a059;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-shadow: 0 0 10px rgba(197, 160, 89, 0.2);
+    }
+
+    .ds-page-header p {
+        color: #888;
+        font-style: italic;
+    }
+
+    
+    .btn-ds-add {
+        background-color: #1f1a15 !important;
+        border: 1px solid #8c7340 !important;
+        color: #c5a059 !important;
+        font-family: 'Cinzel', serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 0.6rem 1.5rem;
+        border-radius: 2px;
+        text-decoration: none;
+        transition: all 0.4s ease;
+    }
+
+    .btn-ds-add:hover {
+        background-color: #c5a059 !important;
+        color: #111 !important;
+        box-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
+    }
+
+    
+    .ds-table-card {
+        background: linear-gradient(135deg, #151515 0%, #111111 100%) !important;
+        border: 1px solid rgba(140, 115, 64, 0.2) !important;
+        border-radius: 4px;
+        padding: 1.5rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        position: relative;
+    }
+
+    .ds-table-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 4px;
+        border-top: 2px solid #c5a059;
+        border-left: 2px solid #c5a059;
+    }
+
+    
+    .ds-table {
+        margin-bottom: 0;
+        border-collapse: separate;
+    }
+
+    .ds-table thead tr th {
+        font-family: 'Cinzel', serif;
+        color: #8c7340 !important;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.05em;
+        border-bottom: 2px solid rgba(140, 115, 64, 0.3) !important;
+        padding: 1rem 0.75rem;
+    }
+
+    .ds-table tbody tr {
+        transition: background-color 0.3s ease;
+    }
+
+    .ds-table tbody tr:hover {
+        background-color: rgba(197, 160, 89, 0.03) !important;
+    }
+
+    .ds-table tbody tr td {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+        padding: 1rem 0.75rem;
+    }
+
+    
+    .ds-location-image {
+        width: 70px;
+        height: 45px;
+        object-fit: cover;
+        border: 1px solid rgba(140, 115, 64, 0.4);
+        border-radius: 2px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease;
+    }
+
+    .ds-location-image:hover {
+        transform: scale(1.1);
+        border-color: #c5a059;
+    }
+
+    
+    .ds-badge-safe {
+        background-color: rgba(40, 167, 69, 0.1) !important;
+        border: 1px solid #28a745 !important;
+        color: #28a745 !important;
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+        border-radius: 2px;
+        text-transform: uppercase;
+    }
+
+    .ds-badge-danger {
+        background-color: rgba(220, 53, 69, 0.1) !important;
+        border: 1px solid #dc3545 !important;
+        color: #dc3545 !important;
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+        border-radius: 2px;
+        text-transform: uppercase;
+    }
+
+    
+    .btn-ds-edit {
+        background-color: rgba(255, 193, 7, 0.1) !important;
+        border: 1px solid #ffc107 !important;
+        color: #ffc107 !important;
+        transition: all 0.3s ease;
+    }
+
+    .btn-ds-edit:hover {
+        background-color: #ffc107 !important;
+        color: #111 !important;
+    }
+
+    .btn-ds-delete {
+        background-color: rgba(220, 53, 69, 0.1) !important;
+        border: 1px solid #dc3545 !important;
+        color: #dc3545 !important;
+        transition: all 0.3s ease;
+    }
+
+    .btn-ds-delete:hover {
+        background-color: #dc3545 !important;
+        color: #fff !important;
+    }
+
+    .bonfire-badge {
+        background-color: #1a0f00 !important;
+        color: #ff9900 !important;
+        border: 1px solid #e65c00 !important;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 0 10px rgba(230, 92, 0, 0.4);
+        animation: bonfireGlow 2s infinite alternate;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+        border-radius: 2px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .danger-badge {
+        background-color: #1a0000 !important;
+        color: #ff3333 !important;
+        border: 1px solid #990000 !important;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 0 10px rgba(153, 0, 0, 0.4);
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+        border-radius: 2px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    @@keyframes
+    bonfireGlow {
+        0% {
+            box-shadow: 0 0 8px #ff6600, inset 0 0 4px #ff6600;
+            text-shadow: 0 0 3px #ff9900;
+        }
+
+        100% {
+            box-shadow: 0 0 20px #ff3300, inset 0 0 8px #ff3300;
+            text-shadow: 0 0 8px #ff3300;
+        }
+    }
+</style>
+
+<div class="admin-page">
+
+    <div class="ds-page-header d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1>Kadim Kitabeler (Lokasyon Listesi)</h1>
+            <p class="small">Lothric Krallığı'nda keşfedilen ve günlüğe kaydedilen tüm bölgeler.</p>
+        </div>
+
+        <a asp-action="Add" class="btn-ds-add">
+            <i class="fas fa-plus me-1"></i> Yeni Lokasyon Ekle
+        </a>
+    </div>
+
+    <div class="ds-table-card">
+        <div class="table-responsive">
+            <table class="table ds-table align-middle">
+                <thead>
+                    <tr>
+                        <th style="width: 60px;">#</th>
+                        <th style="width: 100px;">Manzara</th>
+                        <th>Lokasyon Adı</th>
+                        <th>Lokasyon Alt Başlığı</th>
+                        <th>Açıklama (Kitabe)</th>
+                        <th style="width: 150px;">Kategori</th>
+                        <th style="width: 110px;">İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="fw-bold" style="color: #8c7340; font-family: 'Cinzel', serif;">
+                                #@item.Id
+                            </td>
+
+                            <td>
+                                <img src="~/images/@item.ImageUrl" class="ds-location-image" alt="@item.Title" />
+                            </td>
+
+                            <td class="fw-semibold" style="font-size: 0.95rem;">
+                                @item.Title
+                            </td>
+
+                            <td class="text-muted small">
+                                @item.InfoSubtitle
+                            </td>
+
+                            <td style="max-width: 250px;">
+                                <div class="text-secondary small text-truncate" title="@item.Description">
+                                    @item.Description
+                                </div>
+                            </td>
+
+                            <td>
+                                @if (item.Category)
+                                {
+                                    <span class="danger-badge">
+                                        <i class="fas fa-skull me-1"></i> Hostile Area (Boss)
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="bonfire-badge">
+                                        <i class="fas fa-fire me-1"></i> Safe Zone (Bonfire)
+                                    </span>
+                                }
+                            </td>
+
+                            <td>
+                                <div class="d-flex gap-2">
+                                    <a href="/Admin/Update?id=@item.Id" class=" btn btn-ds-edit btn-sm rounded-2"
+                                       title="Yazıtı Düzenle">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+
+                                    <a asp-action="Delete" asp-route-id="@item.Id"
+                                       class="btn btn-ds-delete btn-sm rounded-2" title="Yazıtı Tamamen Sil"
+                                       onclick="return confirm('Bu kadim lokasyon kaydını tarih sayfalarından tamamen silmek istediğinize emin misiniz?')">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<partial name="_ValidationScriptsPartial" />

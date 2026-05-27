@@ -1,0 +1,497 @@
+@{
+    ViewData["Title"] = "buildler";
+}
+
+
+@section SayfaStyle {
+    <link rel="stylesheet" href="~/buildler.css" />
+}
+
+
+<h1 class="genelbaslik">
+    <span id="düzeltme"><i class="fa-solid fa-bars-staggered"></i>Kataloglar</span>
+    <span id="düzeltme1"><i class="fa-solid fa-bars-staggered"></i>Buildler</span>
+</h1>
+<div class="Kutular">
+    <div class="kutu">
+        <h2 class="baslik">
+            <span><img src="~/images/dagger.png" alt="" /></span>Bleed and Hollow
+        </h2>
+        <div class="content">
+            <a onclick="showBox(1)">Yüksek Can, Ağır Zırh ve Yıldırım Büyüleri ile PvE ve PvP için
+                idealdir.</a>
+        </div>
+        <div class="altkutu">
+            <span class="ilkkutu">SL 125</span>
+            <span class="ikincikutu">STR/FTH</span>
+            <span class="Ucuncukutu">PvP</span>
+        </div>
+    </div>
+    <div class="kutu">
+        <h2 class="baslik">
+            <span><img src="~/images/sceptre.png" alt="" /></span>Hexer
+        </h2>
+        <div class="content">
+            <a onclick="showBox(2)">Yüksek Hız, Bleed Hasarı ve kritik vuruşlara odaklanan çevik bir
+                DEX buildi.</a>
+        </div>
+        <div class="altkutu">
+            <span class="ilkkutu">SL 140</span>
+            <span class="ikincikutu">DEX/LUCK</span>
+            <span class="Ucuncukutu">Denge</span>
+        </div>
+    </div>
+    <div class="kutu">
+        <h2 class="baslik">
+            <span><img src="~/images/spell-book.png" alt="" /></span>Mage
+        </h2>
+        <div class="content">
+            <a onclick="showBox(3)">Hex yapılarında olduğu gibi, Büyücüler de inanılmaz derecede çok
+                yönlüdür,</a>
+        </div>
+        <div class="altkutu">
+            <span class="ilkkutu">SL 165</span>
+            <span class="ikincikutu">İNT/FTH</span>
+            <span class="Ucuncukutu">PvE</span>
+        </div>
+    </div>
+</div>
+
+<div class="container-buildler active" id="box1">
+    <h1 class="build-title">Bleed and Hollow</h1>
+    <p style="margin-bottom: 10px; margin-top: 10px">
+        Duruma bağlı olarak “yanık (bleed)” veya “hollow” versiyonu
+        kullanılabilir. Bleed build düşmana kanamasal hasar verirken, Hollow
+        versiyonu daha esnek bufflarla çalışır. Statü efektleriyle dolu bir
+        oyunu seviyorsan bu build eğlenceli ve etkilidir.
+    </p>
+    <div class="build-image-container">
+        <img src="~/images/ds3build1.avif" alt="" class="build-image" />
+    </div>
+
+    <div class="build-grid">
+        <div class="stats-column">
+            <h2 class="section-header">Ruh Özü Dağılımı (Statlar)</h2>
+            <table class="stat-table">
+                <thead>
+                    <tr>
+                        <th>Stat</th>
+                        <th>Değer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Vigor (Can)</td>
+                        <td class="stat-value">40</td>
+                    </tr>
+                    <tr>
+                        <td>Endurance (Dayanıklılık)</td>
+                        <td class="stat-value">35</td>
+                    </tr>
+                    <tr>
+                        <td>Strength (Güç)</td>
+                        <td class="stat-value">40</td>
+                    </tr>
+                    <tr>
+                        <td>Dexterity (Beceri)</td>
+                        <td class="stat-value">18</td>
+                    </tr>
+                    <tr>
+                        <td>Faith (İnanç)</td>
+                        <td class="stat-value">30</td>
+                    </tr>
+                    <tr>
+                        <td>Attunement (Büyü Yuvası)</td>
+                        <td class="stat-value">18</td>
+                    </tr>
+                    <tr>
+                        <td>Luck (Şans)</td>
+                        <td class="stat-value">7</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 15px; font-size: 0.9em; text-align: right">
+                **Hedef Ruh Seviyesi: 125**
+            </p>
+        </div>
+
+        <div class="equipment-column">
+            <h2 class="section-header">Yüzükler</h2>
+
+            <ul class="equipment-list">
+                <li class="equipment-item">
+                    <span class="item-icon">💍</span>
+                    <div>
+                        <span class="item-name">Ring of Favor</span>
+                        <span class="item-details">(Temel HP, Stamina ve Yük artışı)</span>
+                    </div>
+                </li>
+                <li class="equipment-item">
+                    <span class="item-icon">💍</span>
+                    <div>
+                        <span class="item-name">Prisoner's Chain</span>
+                        <span class="item-details">(5Canlılık 5Dayanıklılık 5Canlılık)</span>
+                    </div>
+                </li>
+                <li class="equipment-item">
+                    <span class="item-icon">💍</span>
+                    <div>
+                        <span class="item-name">Halkası (Ring of Favor) +3</span>
+                        <span class="item-details">(Temel HP, Stamina ve Yük artışı)</span>
+                    </div>
+                </li>
+                <li class="equipment-item">
+                    <span class="item-icon">💍</span>
+                    <div>
+                        <span class="item-name">Preference</span>
+                        <span class="item-details">(İsteğe Bağlı)</span>
+                    </div>
+                </li>
+            </ul>
+
+            <h2 class="section-header">Önerilen Zırh Seti</h2>
+            <p style="margin-top: -10px">
+                Lorian Zırh Seti veya Fallen Knight Zırh Seti (Toparlanma (Poise)
+                ve ağırlık dengesi için.)
+            </p>
+        </div>
+    </div>
+    <h2 class="section-header">Savaşın Yolu (Taktikler)</h2>
+
+    <div class="playstyle-box">
+        <h4>PvE (Oyuncu vs Çevre) Taktikleri</h4>
+        <ul>
+            <li>
+                Düşmanları kılıçla yakından meşgul edin ve boşluk bulduğunuzda
+                Yıldırım Mızrağı ile ağır hasar verin.
+            </li>
+            <li>
+                Ağır zırhınız sayesinde vuruşları takas edebilir (trade) ve
+                stamina yönetimi ile güçlü saldırılara devam edebilirsiniz.
+            </li>
+        </ul>
+    </div>
+
+    <div class="playstyle-box">
+        <h4>PvP (Oyuncu vs Oyuncu) Taktikleri</h4>
+        <ul>
+            <li>
+                İki elle tutulan kılıcın (Greatsword) toparlanma (Poise)
+                özelliğini kullanarak rakibin küçük silahlarının vuruşlarını
+                kesin.
+            </li>
+            <li>
+                Güneş Işığı Mızrağı (Sunlight Spear) mucizesini sürpriz bir
+                şekilde, rakip kendini iyileştirirken veya dodge yaparken
+                kullanın.
+            </li>
+        </ul>
+    </div>
+
+    <div class="playstyle-box" style="border-left: 4px solid #cc0000">
+        <h4 style="color: #cc0000">Zayıf Yönleri</h4>
+        <ul>
+            <li>
+                Yüksek büyü direncine sahip düşmanlara karşı hasarınız düşer.
+            </li>
+            <li>
+                Ağır zırh nedeniyle yavaş yuvarlanma (roll) hızı, zamanlamayı
+                zorlaştırabilir.
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="container-buildler" id="box2">
+    <h1 class="build-title">Hexer</h1>
+    <p style="margin-bottom: 10px; margin-top: 10px">
+        Büyüler önceki sürüme kıyasla zayıflatılmış olsa da, bolca işlevsellik
+        isteyen oyuncular için hâlâ harika. Bu yapı, çoğu Büyü büyüsünü yapmak
+        için Zekâ ve İnanç'ın bir karışımı. Büyülerinizi yapmak için
+        Caitha'nın Çanı ve Izalith Asası'nı kullanabilirsiniz.
+    </p>
+    <div class="build-image-container">
+        <img src="~/images/ds3build2.avif" alt="" class="build-image" />
+    </div>
+
+    <div class="build-grid">
+        <div class="stats-column">
+            <h2 class="section-header">Ruh Özü Dağılımı (Statlar)</h2>
+            <table class="stat-table">
+                <thead>
+                    <tr>
+                        <th>Stat</th>
+                        <th>Değer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Vigor (Can)</td>
+                        <td class="stat-value">40</td>
+                    </tr>
+                    <tr>
+                        <td>Endurance (Dayanıklılık)</td>
+                        <td class="stat-value">35</td>
+                    </tr>
+                    <tr>
+                        <td>Strength (Güç)</td>
+                        <td class="stat-value">40</td>
+                    </tr>
+                    <tr>
+                        <td>Dexterity (Beceri)</td>
+                        <td class="stat-value">18</td>
+                    </tr>
+                    <tr>
+                        <td>Faith (İnanç)</td>
+                        <td class="stat-value">30/45</td>
+                    </tr>
+                    <tr>
+                        <td>Attunement (Büyü Yuvası)</td>
+                        <td class="stat-value">18</td>
+                    </tr>
+                    <tr>
+                        <td>İntelligence (Büyü)</td>
+                        <td class="stat-value">30/45</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 15px; font-size: 0.9em; text-align: right">
+                **Hedef Ruh Seviyesi: 140**
+            </p>
+        </div>
+
+        <div class="equipment-column">
+            <h2 class="section-header">Yüzükler</h2>
+
+            <ul class="equipment-list">
+                <li class="equipment-item">
+                    <span class="item-icon">💍</span>
+                    <div>
+                        <span class="item-name">Ring of Favor</span>
+                        <span class="item-details">(Temel HP, Stamina ve Yük artışı)</span>
+                    </div>
+                </li>
+                <li class="equipment-item">
+                    <span class="item-icon">💍</span>
+                    <div>
+                        <span class="item-name">Sage Ring</span>
+                        <span class="item-details">Sanal Beceriyi artırır</span>
+                    </div>
+                </li>
+                <li class="equipment-item">
+                    <span class="item-icon">💍</span>
+                    <div>
+                        <span class="item-name">Dark Clutch Ring</span>
+                        <span class="item-details">PvE'de karanlık saldırıyı %15, PvP'de ise %8 artırır</span>
+                    </div>
+                </li>
+                <li class="equipment-item">
+                    <span class="item-icon">💍</span>
+                    <div>
+                        <span class="item-name">Preference</span>
+                        <span class="item-details">(İsteğe Bağlı)</span>
+                    </div>
+                </li>
+            </ul>
+
+            <h2 class="section-header">Önerilen Zırh Seti</h2>
+            <p style="margin-top: -10px">
+                Wolf Zırh Seti veya Fallen Knight Zırh Seti (Toparlanma (Poise) ve
+                ağırlık dengesi için.)
+            </p>
+        </div>
+    </div>
+    <h2 class="section-header">Savaşın Yolu (Taktikler)</h2>
+
+    <div class="playstyle-box">
+        <h4>PvE (Oyuncu vs Çevre) Taktikleri</h4>
+        <ul>
+            <li>
+                Düşmanları kılıçla yakından meşgul edin ve boşluk bulduğunuzda
+                Yıldırım Mızrağı ile ağır hasar verin.
+            </li>
+            <li>
+                Ağır zırhınız sayesinde vuruşları takas edebilir (trade) ve
+                stamina yönetimi ile güçlü saldırılara devam edebilirsiniz.
+            </li>
+        </ul>
+    </div>
+
+    <div class="playstyle-box">
+        <h4>PvP (Oyuncu vs Oyuncu) Taktikleri</h4>
+        <ul>
+            <li>
+                İki elle tutulan kılıcın (Greatsword) toparlanma (Poise)
+                özelliğini kullanarak rakibin küçük silahlarının vuruşlarını
+                kesin.
+            </li>
+            <li>
+                Güneş Işığı Mızrağı (Sunlight Spear) mucizesini sürpriz bir
+                şekilde, rakip kendini iyileştirirken veya dodge yaparken
+                kullanın.
+            </li>
+        </ul>
+    </div>
+
+    <div class="playstyle-box" style="border-left: 4px solid #cc0000">
+        <h4 style="color: #cc0000">Zayıf Yönleri</h4>
+        <ul>
+            <li>
+                Yüksek büyü direncine sahip düşmanlara karşı hasarınız düşer.
+            </li>
+            <li>
+                Ağır zırh nedeniyle yavaş yuvarlanma (roll) hızı, zamanlamayı
+                zorlaştırabilir.
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="container-buildler" id="box3">
+    <h1 class="build-title">Mage</h1>
+    <p style="margin-bottom: 10px; margin-top: 10px">
+        Saf büyücü karakterlerin ortaya çıkması uzun zaman alır, ancak ortaya
+        çıktıklarında, aklınıza gelebilecek hemen hemen her rolü
+        üstlenebilirler. Hex yapılarında olduğu gibi, Büyücüler de inanılmaz
+        derecede çok yönlüdür, ancak tek bir özelliğe, yani Zeka'ya
+        odaklanmaları sayesinde ciddi bir etki yaratabilirler.
+    </p>
+    <div class="build-image-container">
+        <img src="~/images/ds3build3.avif" alt="" class="build-image" />
+    </div>
+
+    <div class="build-grid">
+        <div class="stats-column">
+            <h2 class="section-header">Ruh Özü Dağılımı (Statlar)</h2>
+            <table class="stat-table">
+                <thead>
+                    <tr>
+                        <th>Stat</th>
+                        <th>Değer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Vigor (Can)</td>
+                        <td class="stat-value">40</td>
+                    </tr>
+                    <tr>
+                        <td>Endurance (Dayanıklılık)</td>
+                        <td class="stat-value">35</td>
+                    </tr>
+                    <tr>
+                        <td>Strength (Güç)</td>
+                        <td class="stat-value">40</td>
+                    </tr>
+                    <tr>
+                        <td>Dexterity (Beceri)</td>
+                        <td class="stat-value">18</td>
+                    </tr>
+                    <tr>
+                        <td>Faith (İnanç)</td>
+                        <td class="stat-value">30</td>
+                    </tr>
+                    <tr>
+                        <td>Attunement (Büyü Yuvası)</td>
+                        <td class="stat-value">24</td>
+                    </tr>
+                    <tr>
+                        <td>İntelligence (Büyü)</td>
+                        <td class="stat-value">60</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 15px; font-size: 0.9em; text-align: right">
+                **Hedef Ruh Seviyesi: 165**
+            </p>
+        </div>
+
+        <div class="equipment-column">
+            <h2 class="section-header">Yüzükler</h2>
+
+            <ul class="equipment-list">
+                <li class="equipment-item">
+                    <span class="item-icon">💍</span>
+                    <div>
+                        <span class="item-name">Sage Ring</span>
+                        <span class="item-details">Sanal Beceriyi artırır</span>
+                    </div>
+                </li>
+                <li class="equipment-item">
+                    <span class="item-icon">💍</span>
+                    <div>
+                        <span class="item-name">Magic Clutch Ring</span>
+                        <span class="item-details">PvE'de büyü saldırısını %15, PvP'de ise %8 artırır</span>
+                    </div>
+                </li>
+                <li class="equipment-item">
+                    <span class="item-icon">💍</span>
+                    <div>
+                        <span class="item-name">Preference</span>
+                        <span class="item-details">(İsteğe Bağlı)</span>
+                    </div>
+                </li>
+                <li class="equipment-item">
+                    <span class="item-icon">💍</span>
+                    <div>
+                        <span class="item-name">Preference</span>
+                        <span class="item-details">(İsteğe Bağlı)</span>
+                    </div>
+                </li>
+            </ul>
+
+            <h2 class="section-header">Önerilen Zırh Seti</h2>
+            <p style="margin-top: -10px">
+                Lorian Zırh Seti veya Fallen Knight Zırh Seti (Toparlanma (Poise)
+                ve ağırlık dengesi için.)
+            </p>
+        </div>
+    </div>
+    <h2 class="section-header">Savaşın Yolu (Taktikler)</h2>
+
+    <div class="playstyle-box">
+        <h4>PvE (Oyuncu vs Çevre) Taktikleri</h4>
+        <ul>
+            <li>
+                Düşmanları kılıçla yakından meşgul edin ve boşluk bulduğunuzda
+                Yıldırım Mızrağı ile ağır hasar verin.
+            </li>
+            <li>
+                Ağır zırhınız sayesinde vuruşları takas edebilir (trade) ve
+                stamina yönetimi ile güçlü saldırılara devam edebilirsiniz.
+            </li>
+        </ul>
+    </div>
+
+    <div class="playstyle-box">
+        <h4>PvP (Oyuncu vs Oyuncu) Taktikleri</h4>
+        <ul>
+            <li>
+                İki elle tutulan kılıcın (Greatsword) toparlanma (Poise)
+                özelliğini kullanarak rakibin küçük silahlarının vuruşlarını
+                kesin.
+            </li>
+            <li>
+                Güneş Işığı Mızrağı (Sunlight Spear) mucizesini sürpriz bir
+                şekilde, rakip kendini iyileştirirken veya dodge yaparken
+                kullanın.
+            </li>
+        </ul>
+    </div>
+
+    <div class="playstyle-box" style="border-left: 4px solid #cc0000">
+        <h4 style="color: #cc0000">Zayıf Yönleri</h4>
+        <ul>
+            <li>
+                Yüksek büyü direncine sahip düşmanlara karşı hasarınız düşer.
+            </li>
+            <li>
+                Ağır zırh nedeniyle yavaş yuvarlanma (roll) hızı, zamanlamayı
+                zorlaştırabilir.
+            </li>
+        </ul>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/js/buildler.js"></script>
+}

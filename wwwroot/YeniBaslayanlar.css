@@ -1,0 +1,527 @@
+html {
+  scroll-behavior: auto;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  transition: 0.2s ease;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+}
+body {
+  background: radial-gradient(circle, #3a0f0f 0%, #120505 70%);
+  height: 250vh;
+  font-family: "Merriweather", serif;
+  overflow-x: hidden;
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    transparent,
+    rgba(20, 5, 5, 0.7)
+  );
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+.Baslik .menu {
+  width: 85vw;
+  display: flex;
+  margin: 0 auto;
+  height: 80px;
+  align-items: center;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  margin-top: 30px;
+  justify-content: space-evenly;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  backdrop-filter: blur(5px);
+  z-index: 2;
+}
+.Baslik .menu img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+.Baslik .menu ul {
+  display: flex;
+  list-style-type: none;
+  margin: 40px;
+}
+.Baslik .menu ul li {
+  margin: 0 40px;
+}
+.Baslik .menu ul li a {
+  text-decoration: none;
+  color: #ddd;
+  font-weight: 200;
+  font-size: 14px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+  padding: 8px 15px;
+}
+.Baslik .menu ul li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #ff6a1c;
+  transition: 0.3s;
+  transform: translateX(-50%);
+}
+.Baslik .menu ul li a:hover::after {
+  width: 80%;
+}
+.Baslik .menu ul i {
+  font-size: 20px;
+  margin: 0 5px;
+  color: white;
+}
+.Baslik .menu ul button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+:root {
+  --ds-dark-bg: #111111;
+  --ds-card-bg: #1c1c1c;
+  --ds-accent-orange: #e65100;
+  --ds-light-text: #cccccc;
+  --ds-heading-text: #f5f5f5;
+  --ds-border-color: #5d4037;
+  --ds-line-color: #333333;
+  --ds-orange: #ff6a1c;
+  --ds3-dark: #0b0a0c;
+  --ds3-warm: #4b1f22;
+  --ds3-deep: #1c1416;
+  --ds3-ash: #2b2225;
+  --color-black: #0a0a0a;
+  --color-dark-gray: #1a1a1a;
+  --color-ash-gray: #333333;
+  --color-crimson: #8b0000;
+  --color-fire-red: #cc0000;
+  --color-text-light: #e0e0e0;
+  --color-dark: #141414;
+  --color-primary: #8b0000;
+  --color-secondary: #ffc457;
+  --color-text: #e0e0e0;
+  --color-light-bg: #2a2a2a;
+  --ds3-dark: #1a1a1a;
+  --ds3-accent: #b08d57;
+  --ds3-light-text: #e0e0e0;
+  --ds3-shadow: #7c6441;
+  --ds3-dark: #1a1a1a;
+  --ds3-accent: #b08d57;
+  --ds3-light-text: #e0e0e0;
+  --ds3-shadow: #7c6441;
+  --ds3-mid: #2c2c2c;
+}
+.Cizgi {
+  position: relative;
+  width: 1500px;
+  margin: 100px auto;
+  top: 10px;
+}
+.cizgicontainer {
+  padding: 10px 50px;
+  position: relative;
+  width: 50%;
+  animation: haraketetme 1s linear forwards;
+  -webkit-animation: haraketetme 1s linear forwards;
+  opacity: 0;
+}
+@keyframes haraketetme {
+  0% {
+    opacity: 1;
+    transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -o-transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
+  }
+}
+.cizgicontainer:nth-child(1) {
+  animation-delay: 0s;
+}
+.cizgicontainer:nth-child(2) {
+  animation-delay: 1s;
+}
+.cizgicontainer:nth-child(3) {
+  animation-delay: 2s;
+}
+.cizgicontainer:nth-child(4) {
+  animation-delay: 3s;
+}
+.cizgicontainer:nth-child(5) {
+  animation-delay: 4s;
+}
+.cizgicontainer:nth-child(6) {
+  animation-delay: 5s;
+}
+.yazikutu {
+  padding: 20px 30px;
+  background: url("images/redstonestonestone.jpg");
+  background-size: cover;
+  position: relative;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  font-size: 15px;
+  border: 2px solid var(--color-fire-red);
+  height: 250px;
+  box-shadow: 0 0 10px var(--color-fire-red);
+}
+.yazikutu:hover {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  box-shadow: 0 0 15px var(--color-fire-red);
+}
+
+.sol {
+  left: 0;
+}
+.sag {
+  left: 50%;
+}
+.cizgicontainer img {
+  position: absolute;
+  width: 40px;
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+  right: -20px;
+  top: 32px;
+  z-index: 10;
+}
+.sag img {
+  left: -20px;
+}
+.Cizgi::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background: var(--color-crimson);
+  top: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: -1;
+  animation: haraket 6s linear forwards;
+  -webkit-animation: haraket 6s linear forwards;
+}
+@keyframes haraket {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+.yazikutu h2 {
+  font-weight: 600;
+  color: var(--color-text-light);
+  text-shadow: 0 0 8px var(--color-text-light);
+}
+.yazikutu small {
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  color: var(--color-text-light);
+  font-weight: 300;
+}
+.yazikutu p {
+  font-weight: 100;
+  color: var(--ds3-accent);
+  text-shadow: 0 0 6px var(--ds3-accent);
+  font-family: 1rem;
+  text-align: justify;
+  letter-spacing: 2px;
+}
+.sol-ok {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15 solid transparent;
+  border-left: 15px solid var(--color-fire-red);
+  right: -15px;
+}
+.sag-ok {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15 solid transparent;
+  border-right: 15px solid var(--color-fire-red);
+  left: -15px;
+}
+.genelbaslikyb {
+  position: relative;
+  width: 100vw;
+  height: 350px;
+  background: url("images/ybstone.jpg");
+  background-size: cover;
+  border-bottom: 2px solid var(--ds3-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.genelbaslikyb .yenibaslayanlar {
+  font-size: 3rem;
+  color: var(--ds3-accent);
+  text-shadow: 0 0 10px var(--color-secondary);
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+}
+.genelbaslikyb p {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  color: var(--ds3-accent);
+  text-shadow: 0 0 10px var(--color-secondary);
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 7px;
+}
+.not {
+  padding: 20px 50px;
+  max-width: 1700px;
+  margin: 30px auto;
+}
+
+.souls-not {
+  background-color: var(--ds3-mid);
+  border-left: 5px solid var(--ds3-accent);
+  padding: 20px 20px 20px 30px;
+  margin: 0;
+  font-style: italic;
+  color: var(--ds3-light-text);
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.souls-not p {
+  margin: 5px 0 15px 0;
+  line-height: 1.6;
+  font-size: 1.1em;
+  text-transform: capitalize;
+}
+
+.souls-not h6 {
+  display: block;
+  text-align: right;
+  font-style: normal;
+  color: var(--ds3-accent);
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.ünlemicon {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  font-size: 1.5em;
+  color: #ffaa00;
+}
+.cizgim {
+  border: none;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--ds3-shadow) 25%,
+    var(--ds3-accent) 50%,
+    var(--ds3-shadow) 75%,
+    transparent
+  );
+  margin: 40px 0;
+  position: relative;
+}
+
+.cizgim::after {
+  content: "🔥";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 0;
+  font-size: 1.5em;
+  color: var(--ds3-accent);
+  background-color: var(--ds3-dark);
+  padding: 0 10px;
+}
+footer {
+  background-color: #080808;
+  width: 100%;
+  margin: 0 auto;
+  height: 430px;
+  position: relative;
+  margin-top: 50px;
+  bottom: 0;
+  border-top-left-radius: 60px;
+}
+.enust {
+  position: absolute;
+  top: 20px;
+  left: 1835px;
+}
+.enust i {
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+}
+footer .content {
+  display: flex;
+  padding-top: 35px;
+}
+.content .bir {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  position: absolute;
+  left: 150px;
+}
+.content .bir .baslikbir {
+  border-bottom: 2px solid red;
+  margin-right: 5px;
+}
+.content .bir h1 {
+  color: white;
+  font-weight: 700;
+}
+.content .bir a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+  padding-top: 20px;
+}
+.content .dort {
+  margin-top: 14px;
+  position: absolute;
+  left: 1050px;
+  bottom: 286px;
+}
+.content .dort .baslikdort {
+  border-bottom: 2px solid red;
+  width: 140px;
+}
+.content .dort h1 {
+  color: white;
+  font-weight: 700;
+}
+.content .icon {
+  padding-top: 30px;
+}
+.content .icon a {
+  font-size: 35px;
+  text-decoration: none;
+  color: white;
+  border: none;
+  outline: none;
+}
+footer a:hover {
+  padding-left: 15px;
+  font-size: 18px;
+}
+footer .icon a:hover {
+  font-size: 40px;
+}
+.content .iki {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 450px;
+  text-align: justify;
+}
+.content .iki .baslikiki {
+  border-bottom: 2px solid red;
+  margin-right: 5px;
+}
+.content .iki h1 {
+  color: white;
+  font-weight: 700;
+}
+.content .iki a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+  padding-top: 20px;
+}
+.content .uc {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 750px;
+  text-align: justify;
+}
+.content .uc .baslikuc {
+  border-bottom: 2px solid red;
+  margin-right: 5px;
+}
+.content .uc h1 {
+  color: white;
+  font-weight: 700;
+}
+.content .uc a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+  padding-top: 20px;
+}
+footer .alt {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  border-top: 1px solid #333;
+}
+
+footer .alt p {
+  color: #aaa;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}

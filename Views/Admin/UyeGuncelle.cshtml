@@ -1,0 +1,39 @@
+@model ds3.Models.Uye
+
+@{
+    ViewData["Title"] = "Üye Düzenle";
+    Layout = "_AdminLayout";
+}
+
+<div class="container" style="padding: 40px;">
+    <div class="card mx-auto"
+         style="max-width: 600px; background-color: #1a1a1a; border: 2px solid #3e3a36; color: #e0e0e0;">
+        <div class="card-header" style="background-color: #262626; border-bottom: 2px solid #3e3a36; padding: 20px;">
+            <h3 style="color: #d1a153;">✍️ Ashen One Düzenle</h3>
+        </div>
+        <div class="card-body" style="padding: 30px;">
+            <form asp-action="UyeGuncelle" method="post">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="mb-4">
+                    <label style="color: #d1a153; font-weight: bold;">Kullanıcı Adı</label>
+                    <input asp-for="KullaniciAdi" class="form-control"
+                           style="background: #262626; border: 1px solid #3e3a36; color: white;" />
+                </div>
+
+                <div class="mb-4">
+                    <label style="color: #d1a153; font-weight: bold;">Email</label>
+                    <input asp-for="Email" class="form-control"
+                           style="background: #262626; border: 1px solid #3e3a36; color: white;" />
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <a href="/Admin/Uyeler" class="btn btn-secondary">İptal</a>
+                    <button type="submit" class="btn"
+                            style="background-color: #d1a153; color: black; font-weight: bold;">Değişiklikleri
+                        Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

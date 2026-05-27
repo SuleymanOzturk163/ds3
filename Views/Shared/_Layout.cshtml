@@ -1,0 +1,154 @@
+﻿@using System.Security.Claims
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Souls 3 Wiki</title>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="icon" type="image/png" href="~/images/logo2.png">
+    <link rel="stylesheet" href="~/loading.css">
+    <link rel="stylesheet" href="~/lokasyonlar.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    @RenderSection("SayfaStyle", required: false)
+    <style>
+            .menu ul li a {
+                display: inline-block !important;
+                width: auto !important;
+                min-width: max-content !important;
+                position: relative !important;
+            }
+
+            .menu ul li a {
+                height: 40px !important;
+                line-height: 40px !important;
+                padding: 0 !important;
+            }
+    </style>
+</head>
+
+<body>
+    <div id="dsLoader">
+        <div class="loader-wrapper">
+            <img src="~/images/logo2.png" class="ds-logo" alt="Logo" />
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+                <span class="loading-text">LOADING...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="Baslik">
+            <div class="menu">
+                <a href="/"><img src="~/images/logo2.png" alt="Logo" /></a>
+                <ul>
+                    <li><a class="link" data-target="Anasayfa" href="/Home/Index">Ana Sayfa</a></li>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        <li><a href="/Admin/Index" style="color: #ff4500;">Admin Paneli</a></li>
+                    }
+                    <li><a href="/Home/buildler">Buildler</a></li>
+                    <li><a href="/Home/lokasyonlar">Lokasyonlar</a></li>
+                    <li><a href="/Home/BossRehberi">Boss Rehberi</a></li>
+                    <li><a href="/Home/YeniBaslayanlar">Yeni Başlayanlar</a></li>
+                    <li><a href="/Home/Hakkimda">Hakkımda</a></li>
+                    <li><a href="/Home/iletisim">İletişim</a></li>
+                </ul>
+                <ul>
+                    <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button><a href="https://store.steampowered.com/app/374320/DARK_SOULS_III/"><i
+                        class="fa-brands fa-steam"></i></a></button>
+
+                        <button>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <a href="/Home/Logout" title="Çıkış Yap"><i class="fa-solid fa-right-from-bracket"></i></a>
+                            }
+                            else
+                            {
+                                <a href="/Home/login" title="Giriş Yap"><i class="fa-solid fa-circle-user"></i></a>
+                            }
+                        </button>
+
+                        <button><a href="/Home/alisveris"><i class="fa-solid fa-cart-shopping"></i></a></button>
+                    </ul>
+                    <div class="arama-formu">
+                        <input type="text" class="arama-input" id="search-box"
+                               placeholder="Lokasyon Ara (Örn: Irithyll)... (Loc. sayfası içindir)" />
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+            </div>
+
+            @RenderBody()
+
+            @if (ViewContext.RouteData.Values["action"]?.ToString() != "rehber")
+            {
+                <footer>
+                    <div class="enust"><i class="fa-solid fa-circle-info"></i></div>
+                    <div class="content">
+                        <div class="bir">
+                            <div class="baslikbir">
+                                <h1>Wiki</h1>
+                            </div>
+                            <a href="/Home/hakkimda">Hakkımda</a>
+                            <a href="#">Gizlilik Politikası</a>
+                            <a href="#">Hizmetlerimiz</a>
+                        </div>
+                        <div class="iki">
+                            <div class="baslikiki">
+                                <h1>Yardım</h1>
+                            </div>
+                            <a href="#">SSS</a>
+                            <a href="/Home/iletisim">İletişim</a>
+                            <a href="#">Sipariş Durumu</a>
+                            <a href="#">Ödeme Seçenekleri</a>
+                        </div>
+                        <div class="uc">
+                            <div class="baslikuc">
+                                <h1>Online Alışveriş</h1>
+                            </div>
+                            <a href="/Home/alisveris">DLC</a>
+                            <a href="/Home/alisveris">Game</a>
+                            <a href="/Home/alisveris">Season Pass</a>
+                        </div>
+                        <div class="dort">
+                            <div class="baslikdort">
+                                <h1>Takip Et</h1>
+                            </div>
+                            <div class="icon">
+                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#"><i class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alt">
+                        <p>© @DateTime.Now.Year Süleyman Öztürk - DS3 Wiki. Tüm hakları saklıdır.</p>
+                    </div>
+                </footer>
+            }
+
+        </div>
+        <div id="fadeLayer"></div>
+
+        <script src="~/js/loader.js"></script>
+        <script src="~/js/lokasyonlar.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+            const cards = document.querySelectorAll(".ilk");
+            cards.forEach((card, index) => {
+            setTimeout(() => { card.classList.add("show"); }, 300 * (index + 1));
+            });
+            });
+        </script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
+
+</html>

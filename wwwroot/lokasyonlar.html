@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/logo2.png" />
+    <link rel="stylesheet" href="lokasyonlar.css" />
+    <link rel="stylesheet" href="loading.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <title>Dark Souls 3 Wiki - Lokasyonlar</title>
+  </head>
+  <body>
+    <!-- YÜKLENME ANİMASYONU -->
+    <div id="dsLoader">
+      <div class="loader-wrapper">
+        <img src="images/logo2.png" class="ds-logo" />
+
+        <div class="loading-bar-container">
+          <div class="loading-bar"></div>
+          <span class="loading-text">LOADING...</span>
+        </div>
+      </div>
+    </div>
+    <!-- YÜKLENME ANİMASYONU -->
+    <div class="container">
+      <div class="Baslik">
+        <div class="menu">
+          <img src="images/logo2.png" alt="" />
+          <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="buildler.html">Buildler</a></li>
+            <li><a href="lokasyonlar.html">Lokasyonlar</a></li>
+            <li><a href="BossRehberi.html">Boss Rehberi</a></li>
+            <li><a href="YeniBaslayanlar.html">Yeni Başlayanlar</a></li>
+            <li><a href="Hakkimda.html">Hakkımda</a></li>
+            <li><a href="İletisim.html">İletişim</a></li>
+          </ul>
+          <ul>
+            <button id="search-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button>
+              <a
+                href="https://store.steampowered.com/app/374320/DARK_SOULS_III/"
+                ><i class="fa-brands fa-steam"></i
+              ></a>
+            </button>
+            <button>
+              <a class="tekraracma" href="login.html"
+                ><i class="fa-solid fa-circle-user"></i
+              ></a>
+            </button>
+            <button>
+              <a href="Alisveris.html"
+                ><i class="fa-solid fa-cart-shopping"></i
+              ></a>
+            </button>
+          </ul>
+          <div class="arama-formu">
+            <input
+              type="text"
+              class="arama-input"
+              id="search-box"
+              placeholder="Lokasyon Ara (Örn: Irithyll)..."
+            />
+            <i class="fas fa-search"></i>
+          </div>
+        </div>
+      </div>
+      <div class="Sayfa-Content">
+        <div class="resim-content">
+          <img src="images/lok.jpg" alt="" />
+        </div>
+        <div class="Yazi">
+          <h1>
+            <span>L</span>
+            <span>O</span>
+            <span>K</span>
+            <span>A</span>
+            <span>S</span>
+            <span>Y</span>
+            <span>O</span>
+            <span>N</span>
+            <span>L</span>
+            <span>A</span>
+            <span>R</span>
+          </h1>
+          <p>
+            Aradığın Herşey Tek Bir Sekmede <br />
+            Sağ Üstteki arama butonunu kullanarak aradığın lokasyonu
+            bulabilirsin şimdi butona tıkla
+          </p>
+          <button onclick="location.href='#hedef'">HAYDİ BAŞLAYALIM</button>
+        </div>
+      </div>
+      <div class="OrtaContent">
+        <div class="yazi1">
+          <i class="fas fa-hand-sparkles"></i>
+          <span>PvP Mekanları</span>
+        </div>
+
+        <div class="yazi1">
+          <i class="fas fa-landmark"></i>
+          <span>En Görkemli Mekanlar</span>
+        </div>
+
+        <div class="yazi1">
+          <i class="fas fa-skull-crossbones"></i>
+          <span>En Ölümcül Mekanlar</span>
+        </div>
+
+        <div class="yazi1">
+          <i class="fas fa-fire-alt"></i>
+          <span>En Safe Mekanlar</span>
+        </div>
+      </div>
+      <div class="Resim-Kartlari" id="hedef">
+        <div class="kart" data-title="Ateşin Bağişlandiği Tapinak">
+          <img src="images/FirelinkShrineLokasyonlar.png" alt="" />
+          <h2>Ateşin Bağışlandığı Tapınak</h2>
+          <div class="panel-content">
+            <h3>Tapınak Hakkında Bilgiler</h3>
+            <p>
+              Dark Souls serisinin merkez hub'ıdır. Burası, oyuncunun seviye
+              atlayabildiği, eşya satın alabildiği ve hikayede ilerlerken
+              karşılaştığı NPC'lerin toplandığı güvenli bir alandır. İlk Sönmüş,
+              burada Fire Keeper ile tanışır.
+            </p>
+            <button class="kapat-btn">Paneli Kapat</button>
+          </div>
+        </div>
+        <div class="kart" data-title="Lothric Yüksek Duvari">
+          <img src="images/LothricHighWallLokasyonlar.webp" alt="" />
+          <h2>Lothric Yüksek Duvarı</h2>
+          <div class="panel-content">
+            <h3>Duvar Hakkında Bilgiler</h3>
+            <p>
+              Oyunun başlangıç lokasyonudur ve Lothric Kalesine giden ilk
+              kapıdır. Zorlu şövalyeler ve ilk önemli boss (Vordt of the Boreal
+              Valley) bu bölgede bulunur. Düşmanları dikkatlice incelemek,
+              hayatta kalmak için kritik öneme sahiptir.
+            </p>
+            <button class="kapat-btn">Paneli Kapat</button>
+          </div>
+        </div>
+        <div class="kart" data-title="Ölümsüz Yerleşimi">
+          <img src="images/UndeadStealementLokasyonlar.jpg" alt="" />
+          <h2>Ölümsüz Yerleşimi</h2>
+          <div class="panel-content">
+            <h3>Yerleşim Hakkında Bilgiler</h3>
+            <p>
+              Korkunç düşmanlarla ve tuzaklarla dolu geniş bir köydür. Buradaki
+              köylüler ve devler, yeni oyuncular için ciddi bir engel teşkil
+              edebilir. Bölgenin sonunda Curse-Rotted Greatwood bossu
+              beklemektedir.
+            </p>
+            <button class="kapat-btn">Paneli Kapat</button>
+          </div>
+        </div>
+        <div class="kart" data-title="Boreal Vadisi Irithyll">
+          <img src="images/BorealVadiLokasyonlar.webp" alt="" />
+          <h2>Boreal Vadisi Irithyll</h2>
+          <div class="panel-content">
+            <h3>Irithyll Hakkında Bilgiler</h3>
+            <p>
+              Aniden soğuk ve ay ışığıyla aydınlanmış büyülü bir şehir. Pontiff
+              Sulyvahn tarafından yönetilir. Şehrin mimarisi, Anor Londo'nun
+              ihtişamını hatırlatır ancak buzlu sis ve karanlık büyülerle
+              kaplıdır. Bu bölge, aynı zamanda ünlü Darkmoon Greatsword'un
+              kökenlerine de işaret eder.
+            </p>
+            <button class="kapat-btn">Paneli Kapat</button>
+          </div>
+        </div>
+        <div class="kart" data-title="Cathedral of the Deep">
+          <img src="images/cathedrallokasyonlar.jpg" alt="" />
+          <h2>Cathedral of the Deep</h2>
+          <div class="panel-content">
+            <h3>Katedral Hakkında Bilgiler</h3>
+            <p>
+              Deacon of the Deep ve Saint Aldrich'in bulunduğu devasa, gotik bir
+              katedral. Çevresi devasa mezarlıklar ve bataklıklarla çevrilidir.
+              İçerideki labirent benzeri yapılar ve Patches gibi NPC'ler
+              tarafından kurulan tuzaklar, burayı zorlu bir keşif alanı yapar.
+            </p>
+            <button class="kapat-btn">Paneli Kapat</button>
+          </div>
+        </div>
+        <div class="kart" data-title="Farron Keep">
+          <img src="images/farronkeeplokasyonlar.webp" alt="" />
+          <h2>Farron Keep</h2>
+          <div class="panel-content">
+            <h3>Koru Hakkında Bilgiler</h3>
+            <p>
+              Yavaşlatan ve zehirleyen bir bataklık bölgesi. Oyuncunun
+              ilerlemesi için üç meşalenin söndürülmesi gerekir. Burası aynı
+              zamanda Abysswatchers (Farron'un Gözcüleri) boss dövüşünün
+              yapıldığı alandır ve Artorias'ın ruhunu taşıyan birliğin son
+              kalesidir.
+            </p>
+            <button class="kapat-btn">Paneli Kapat</button>
+          </div>
+        </div>
+        <div class="kart" data-title="Anor Londo">
+          <img src="images/anorlondolokasyonlar.webp" alt="" />
+          <h2>Anor Londo</h2>
+          <div class="panel-content">
+            <h3>Güneş Şehri Hakkında Bilgiler</h3>
+            <p>
+              Serinin ilk oyunundan tanıdık, Tanrıların Kralı Gwyn'in terk
+              edilmiş şehri. Irithyll'in hemen ilerisinde bulunur ve Dark Souls
+              III'te yoğun bir şekilde kış manzarası altındadır. Burada,
+              Aldrich, Devourer of Gods bossu ile yüzleşilir.
+            </p>
+            <button class="kapat-btn">Paneli Kapat</button>
+          </div>
+        </div>
+        <div class="kart" data-title="Lothric Castle">
+          <img src="images/lothriccastlelokasyonlar.webp" alt="" />
+          <h2>Lothric Castle</h2>
+          <div class="panel-content">
+            <h3>Kale Hakkında Bilgiler</h3>
+            <p>
+              Oyunun ana kalelerinden biridir ve Lord of Cinder'ın
+              ikametgahıdır. Geniş ve karmaşık bir yapıya sahiptir; kanatlı
+              şövalyeler ve Ejderhalarla karşılaşılır. Burası, Grand Archives'e
+              ve son boss'lardan biri olan Twin Princes (İkiz Prensler) ile
+              dövüşe giden yoldur.
+            </p>
+            <button class="kapat-btn">Paneli Kapat</button>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="enust">
+          <i class="fa-solid fa-circle-info"></i>
+        </div>
+        <div class="content">
+          <div class="bir">
+            <div class="baslikbir">
+              <h1>Wiki</h1>
+            </div>
+            <a href="Hakkimda.html">Hakkımda</a>
+            <a href="#">Gizlilik Politikası</a>
+            <a href="#">Hizmetlerimiz</a>
+          </div>
+          <div class="iki">
+            <div class="baslikiki">
+              <h1>Yardım</h1>
+            </div>
+            <a href="#">SSS</a>
+            <a href="İletisim.html">İletişim</a>
+            <a href="#">Sipariş Durumu</a>
+            <a href="#">Ödeme Seçenekleri</a>
+          </div>
+          <div class="uc">
+            <div class="baslikuc">
+              <h1>Online Alışveriş</h1>
+            </div>
+            <a href="Alisveris.html">DLC</a>
+            <a href="Alisveris.html">Game</a>
+            <a href="Alisveris.html">Season Pass</a>
+          </div>
+          <div class="dort">
+            <div class="baslikdort">
+              <h1>Takip Et</h1>
+            </div>
+            <div class="icon">
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="#"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="alt">
+          <p>© 2025 Süleyman Öztürk – DS3 Wiki. Tüm hakları saklıdır.</p>
+        </div>
+      </footer>
+    </div>
+    <script src="js/lokasyonlar.js"></script>
+    <script src="js/loader.js"></script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/logo2.png">
+    <link rel="stylesheet" href="stylelogin.css" />
+    <link rel="stylesheet" href="loading.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <title>Dark Souls 3 Wiki - Login</title>
+  </head>
+  <body>
+        <!-- YÜKLENME ANİMASYONU -->
+    <div id="dsLoader">
+      <div class="loader-wrapper">
+        <img src="images/logo2.png" class="ds-logo" />
+
+        <div class="loading-bar-container">
+          <div class="loading-bar"></div>
+          <span class="loading-text">LOADING...</span>
+        </div>
+      </div>
+    </div>
+    <!-- YÜKLENME ANİMASYONU -->
+    <div class="container">
+      <div class="Baslik">
+        <div class="menu">
+          <img src="images/logo2.png" alt="" />
+          <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="buildler.html">Buildler</a></li>
+            <li><a href="lokasyonlar.html">Lokasyonlar</a></li>
+            <li><a href="BossRehberi.html">Boss Rehberi</a></li>
+            <li><a href="YeniBaslayanlar.html">Yeni Başlayanlar</a></li>
+            <li><a href="Hakkimda.html">Hakkımda</a></li>
+            <li><a href="İletisim.html">İletişim</a></li>
+          </ul>
+          <ul>
+            <button>
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button>
+              <a href="https://store.steampowered.com/app/374320/DARK_SOULS_III/"><i class="fa-brands fa-steam"></i></a>
+            </button>
+            <button>
+              <a  class="tekraracma" href="login.html"><i class="fa-solid fa-circle-user"></i></a>
+            </button>
+            <button>
+              <a href="Alisveris.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            </button>
+          </ul>
+        </div>
+      </div>
+      <div class="Giris">
+        <span class="iconkapama">
+          <i class="fa-solid fa-xmark"></i>
+        </span>
+
+
+
+        <div class="formkutu login">
+          <h2>Giriş Yap</h2>
+          <form action="#">
+            <div class="giriskutu">
+              <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+              <input type="email" required>
+              <label>Gmail</label>
+            </div>
+            <div class="giriskutu">
+              <span class="icon"><i class="fa-solid fa-lock"></i></span>
+              <input type="password" required>
+              <label>Şifre</label>
+            </div>
+            <div class="remember">
+              <label><input type="checkbox">Remember me</label>
+              <a href="#">Parolanızı mı unuttunuz?</a>
+            </div>
+            <button type="submit" class="buton">Giriş Yap</button>
+            <div class="giris-kayit">
+              <p>Hesabınız yok mu?<a href="#" class="kayit-link">kayıt ol</a></p>
+            </div>
+          </form>
+        </div>
+
+
+        <div class="formkutu register">
+          <h2>Kayıt Ol</h2>
+          <form action="#">
+            <div class="giriskutu">
+              <span class="icon"><i class="fa-solid fa-user"></i></span>
+              <input type="text" required>
+              <label>Kullanıcı Adı</label>
+            </div>
+            <div class="giriskutu">
+              <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+              <input type="email" required>
+              <label>Gmail</label>
+            </div>
+            <div class="giriskutu">
+              <span class="icon"><i class="fa-solid fa-lock"></i></span>
+              <input type="password" required>
+              <label>Şifre</label>
+            </div>
+            <div class="remember">
+              <label><input type="checkbox">Şartlar ve koşulları kabul ediyorum</label>
+            </div>
+            <button type="submit" class="buton">Kayıt Ol</button>
+            <div class="giris-kayit">
+              <p>Zaten bir hesabınız var mı?<a href="#" class="giris-link">Giriş Yap</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+      <script src="js/account.js"></script>
+      <script src="js/loader.js"></script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+@{
+    ViewData["Title"] = "Yeni Başlayanlar";
+}
+
+@section SayfaStyle {
+    <link rel="stylesheet" href="~/YeniBaslayanlar.css" />
+}
+
+<div class="genelbaslikyb">
+    <h2 class="yenibaslayanlar">Yeni Başlayanlar</h2>
+    <p>“Oyunu aldınız fakat hiçbir bilginiz yok mu? Doğru yerdesiniz!”</p>
+</div>
+
+<div class="not">
+    <div class="souls-not">
+        <span class="ünlemicon">⚠️</span>
+        <p>
+            <strong>Ashen One!</strong> Bu rehber Lothric'in en karanlık
+            sırlarını açığa çıkarır. Unutma: Sayfadaki tüm Bilgiler standart
+            Yeni Oyun (NG) verileridir ve Oyuna Yeni Başlamış ve HiçBir şey
+            bilmeyen kişiler için tasarlanmıştır bilgileri buna dayanarak
+            okuyunuz. İyi Oyunlar.
+        </p>
+        <h6>— Şenlik Ateşi Muhafızı'nın Öğüdü</h6>
+    </div>
+</div>
+
+<hr class="cizgim" />
+
+<div class="Cizgi">
+    <div class="cizgicontainer sol">
+        <img src="~/images/bonfire.png" alt="Bonfire" />
+        <div class="yazikutu">
+            <h2>🗡️ Sınıf Seçimi Önemli Değil</h2>
+            <small>Adım 1</small>
+            <p>
+                Dark Souls 3’te başlangıç sınıfı sadece ilk ekipmanlarını ve
+                statlarını belirler. Oyun ilerledikçe her sınıfı istediğin yöne
+                evirebilirsin. “Knight” yeni başlayanlar için en dengeli
+                tercihtir.
+            </p>
+            <span class="sol-ok"></span>
+        </div>
+    </div>
+
+    <div class="cizgicontainer sag">
+        <img src="~/images/bonfire.png" alt="Bonfire" />
+        <div class="yazikutu">
+            <h2>🔥 Dayanıklılık Her Şeydir</h2>
+            <small>Adım 2</small>
+            <p>
+                Stamina (yeşil bar) saldırı, yuvarlanma ve savunma için en kritik
+                kaynaktır. Barın boşsa saldırma, önce geri çekilip doldur.
+                Dayanıklılık yönetimi oyunu kolaylaştırır.
+            </p>
+            <span class="sag-ok"></span>
+        </div>
+    </div>
+
+    <div class="cizgicontainer sol">
+        <img src="~/images/bonfire.png" alt="Bonfire" />
+        <div class="yazikutu">
+            <h2>🛡️ Yuvarlanma Zamanlaması Kalkan Kullanmaktan İyi</h2>
+            <small>Adım 3</small>
+            <p>
+                Kalkan tutmak güvenli hissettirir ama çoğu boss saldırısı
+                yuvarlanarak daha rahat atlatılır. Roll timing öğrenmek oyunu
+                ciddi şekilde kolaylaştırır. 70% üzeri ekip yükünden kaçın — yoksa
+                yavaş yuvarlanırsın.
+            </p>
+            <span class="sol-ok"></span>
+        </div>
+    </div>
+
+    <div class="cizgicontainer sag">
+        <img src="~/images/bonfire.png" alt="Bonfire" />
+        <div class="yazikutu">
+            <h2>⚔️ Silahı +3/+4 Yapmak Karakter Geliştirmekten Daha Güçlü</h2>
+            <small>Adım 4</small>
+            <p>
+                Erken oyunda silah yükseltmek, stat kasmaktan çok daha fazla hasar
+                sağlar. Bulduğun Titanite Shard’ları boşa harcama; en rahat
+                oynadığın silahı yükselt.
+            </p>
+            <span class="sag-ok"></span>
+        </div>
+    </div>
+
+    <div class="cizgicontainer sol">
+        <img src="~/images/bonfire.png" alt="Bonfire" />
+        <div class="yazikutu">
+            <h2>🧭 Tüm Alanları Dolaş – Gizli Yollar Çok</h2>
+            <small>Adım 5</small>
+            <p>
+                Dark Souls 3 haritaları detay doludur. Kırık duvarlar, gizli
+                merdivenler, arkadan dolanan yollar sık sık görülür. Etrafta
+                dolaşmak daha iyi loot bulmanı sağlar.
+            </p>
+            <span class="sol-ok"></span>
+        </div>
+    </div>
+
+    <div class="cizgicontainer sag">
+        <img src="~/images/bonfire.png" alt="Bonfire" />
+        <div class="yazikutu">
+            <h2>💀 Ölmek Normal</h2>
+            <small>Adım 6</small>
+            <p>
+                Oyunda ölmek başarısızlık değil, öğrenme sürecinin parçasıdır.
+                Düşmanların saldırı patternlerine alışmak için birkaç kez denemek
+                normaldir. Sinirlenme, tekrar dene.
+            </p>
+            <span class="sag-ok"></span>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/loader.js"></script>
+}

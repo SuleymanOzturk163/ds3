@@ -1,0 +1,269 @@
+@{
+  ViewData["Title"] = "";
+  Layout = "_AdminLayout";
+}
+
+<style>
+  .admin-card {
+    background: linear-gradient(135deg, #161616 0%, #111111 100%) !important;
+    border: 1px solid rgba(140, 115, 64, 0.3) !important;
+    border-radius: 4px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.6), 0 5px 15px rgba(0, 0, 0, 0.4);
+    position: relative;
+  }
+
+  .admin-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    border-top: 2px solid #c5a059;
+    border-left: 2px solid #c5a059;
+  }
+
+  .admin-card h3 {
+    font-family: 'Cinzel', serif;
+    color: #c5a059;
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-bottom: 0.25rem;
+    text-shadow: 0 0 10px rgba(197, 160, 89, 0.3);
+  }
+
+  .admin-card p {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0;
+  }
+
+
+  .panel-box {
+    background-color: #151515 !important;
+    border: 1px solid rgba(140, 115, 64, 0.2) !important;
+    border-radius: 4px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .panel-box h2,
+  .panel-box h4 {
+    font-family: 'Cinzel', serif;
+    color: #c5a059;
+    letter-spacing: 0.05em;
+  }
+
+  .panel-box p {
+    color: #aaa;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+
+  .status-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .status-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+
+
+  .status-list li span {
+    width: 8px;
+    height: 8px;
+    background-color: #ff4500;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px #ff4500, 0 0 12px #ff0000;
+    animation: bonfireGlow 2s infinite ease-in-out;
+  }
+
+  @@keyframes bonfireGlow {
+    0% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+      box-shadow: 0 0 12px #ff4500, 0 0 18px #ff0000;
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+  }
+
+
+  .btn-ds-ash {
+    background-color: #1f1a15 !important;
+    border: 1px solid #8c7340 !important;
+    color: #c5a059 !important;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.6rem 1.5rem;
+    transition: all 0.4s ease;
+  }
+
+  .btn-ds-ash:hover {
+    background-color: #c5a059 !important;
+    color: #111 !important;
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
+  }
+
+  .btn-ds-outline {
+    background-color: transparent !important;
+    border: 1px solid rgba(224, 224, 224, 0.3) !important;
+    color: #e0e0e0 !important;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.6rem 1.5rem;
+    transition: all 0.4s ease;
+  }
+
+  .btn-ds-outline:hover {
+    border-color: #c5a059 !important;
+    color: #c5a059 !important;
+    background-color: rgba(197, 160, 89, 0.05) !important;
+  }
+</style>
+
+<div class="row g-4 justify-content-center">
+
+  <div class="col-md-4">
+    <div class="admin-card">
+      <h3>@ViewBag.ToplamLokasyon</h3>
+      <p>Toplam Lokasyon / Mekan</p>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="admin-card">
+      <h3>@ViewBag.ToplamRehber</h3>
+      <p>Yayınlanan Kullanıcı Rehberi</p>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="admin-card">
+      <h3>@ViewBag.ToplamBoss</h3>
+      <p>Yayınlanan Boss Rehberi</p>
+    </div>
+  </div>
+</div>
+
+<div class="row g-4 justify-content-center mt-2">
+  <div class="col-md-4">
+    <div class="admin-card text-center">
+      <h3>@ViewBag.ToplamUye</h3>
+      <p>Siteye kayıtlı üyeler</p>
+    </div>
+  </div>
+</div>
+
+<div class="mt-5">
+
+  <div class="panel-box">
+
+    <h2 class="mb-4">
+      Firelink Shrine Yönetim Paneli
+    </h2>
+
+    <p>
+      Bu kadim panel üzerinden karanlıklar çağındaki tüm teçhizatları, silahları ve gizemli itemleri
+      düzenleyebilir;
+      yeni boss stratejileri ekleyerek sönmeyen közü koruyacak olan Ashen One'lara rehberlik edebilirsin.
+    </p>
+
+  </div>
+
+</div>
+
+<div class="row mt-4 g-4">
+
+  <div class="col-lg-6">
+
+    <div class="panel-box h-100 d-flex flex-column justify-content-between">
+
+      <div>
+        <h4>Hızlı İşlemler</h4>
+        <p class="text-muted small mt-2">Kayıtlara yeni bir antik yazıt veya teçhizat işlemek için aşağıdaki
+          mühürleri kullanın.</p>
+      </div>
+
+      <div class="d-flex gap-3 mt-4">
+
+        <a asp-controller="Admin" asp-action="Add" class="btn btn-ds-ash">
+          Yeni Lokasyon Ekle
+        </a>
+
+        <a asp-controller="Admin" asp-action="RehberEkle" class="btn btn-ds-ash">
+          Yeni Rehber Ekle
+        </a>
+
+        <a asp-controller="Admin" asp-action="BossEkle" class="btn btn-ds-ash">
+          Yeni Boss Ekle
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="col-lg-6">
+
+    <div class="panel-box h-100">
+
+      <h4>Shrine Durumu</h4>
+
+      <ul class="status-list">
+
+        <li>
+          <span></span>
+          İlk Ateş Canlı (Site Aktif)
+        </li>
+
+        <li>
+          <span></span>
+          Köz Bağı Stabil (Admin Panel Çalışıyor)
+        </li>
+
+        <li>
+          <span></span>
+          Küller Arasındaki Bağ Güçlü
+        </li>
+
+        <li>
+          <span style="background-color: #ff0000; box-shadow: 0 0 8px #ff0000;"></span>
+          Lord of Cinder Uykuda
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>
